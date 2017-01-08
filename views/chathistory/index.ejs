@@ -1,0 +1,52 @@
+<% include ../partials/header %>
+<% include ../partials/navbar %>
+
+<div class="container-fluid">
+	<div class="page-header">
+		<h1 class="text-center">Lịch sử chat</h1>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<a href="/chathistory/deleteall" class="btn btn-danger" onclick="return confirmDelete()">Xóa tất cả lịch sử chat</a>
+		</div>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="col-md-3">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<p class="text-center"><strong>Hỗ trợ viên</strong></p>
+				</div>
+				<div class="list-group" id="listSup">
+					<% for(var i = 0; i < data.length; i++){ %>
+						<a href="javascript:void(0)" data-id="<%= data[i].id %>" title="" class="list-group-item sp-item"><%= data[i].name %></a>
+					<% } %>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<p class="text-center"><strong> Khách hàng </strong></p>
+				</div>
+				<div class="list-group" id="listCus">
+					<p class="list-group-item">Vui lòng chọn supporter trước</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+				<p>
+					<span class="text-center btn"><strong>Tin nhắn</strong></span>
+					<span class="btn btn-danger pull-right" id="delete-history">Xóa</span>
+					</p>
+				</div>
+				<div class="list-group" id="listMsg2">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<% include ../partials/footer %>
